@@ -1,0 +1,14 @@
+<div>
+    <div class="dataWrapper" *ngIf="error">
+        <span class="error">Invalid username or password</span>
+    </div>
+    <div>
+        <label for="username">Username</label>
+        <input id="username" type="text" [(ngModel)]="username" />
+    </div>
+    <div>
+            <label for="password">Password</label>
+            <input id="password" type="password" [(ngModel)]="password" />
+    </div>
+    <button (click)="login()">Login</button>
+</div>

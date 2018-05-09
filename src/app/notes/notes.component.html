@@ -1,12 +1,24 @@
 <div>
+    <div class=header>
+        <h1>Welcome {{user}}</h1>
+        <div class="panel">
+            <div class="add"><button (click)="addNote()">add</button></div>
+            <input type="text" [(ngModel)]="newNoteName"/>
+            <div class="delete"><button (click)="deleteNote()">delete</button></div>
+            <div class="logout"><button (click)="logout()">logout</button></div>
+        </div>
+    </div>
     <ul class="notes">
-        <li *ngFor="let note of notes" class="note">
+        <li *ngFor="let note of notes" 
+        (click)="onSelect(note)" 
+        [class.selected]="note===selectedNote"
+        class="note">
             <div>
-                Name: {{note.note}}
-            </div>
-            <div>
-                {{note.data}}
+                Name: {{note.name}}
             </div>
         </li>
     </ul>
+</div>
+<div class="dataWrapper" *ngIf="selectedNote">
+    <textarea [(ngModel)]="selectedNote.data" class="noteData" ></textarea>
 </div>
