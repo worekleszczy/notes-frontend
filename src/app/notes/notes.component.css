@@ -1,18 +1,52 @@
-.note {
+
+.notewrapper {
     display: inline-block;
-    width: 25%;
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    width: 16.666666666%;
     height: 200px;
-    border: 1px solid red;
-    padding: 4px;
-    margin: 10px 0px;
+    padding: 20px;
+}
+.note {
+    width: 100%;
+    height: 100%;
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQk5LcFSuQ9vqmphsUIni8st0eCpW9YDz9T8VcekJmBPsIimL_0");
+    background-size: 100% 100%;
+    transition: 0.5s;
+    padding-top: 20px;
 }
 .selected {
-    background: rgb(200,200,200);
+    transform: rotate(-7deg);
+    transition: 0.5s;
+}
+.dataWrapper {
+    margin-top: 80px;
+    width: 100%;
 }
 .noteData {
-    width: 100%;
+    padding: 10px;
+    border-left: 10px solid rgb(36, 167, 36);
+    border-right: 10px solid rgb(36, 167, 36);
+    border-bottom: 5px solid rgb(36, 167, 36);
+    display: block;
+    width: 80%;
     height: 500px;
+    margin: auto;
     resize: none;
+}
+.nameWrapper {
+    height: 80%;
+    width: 80%;
+    margin: auto;
+    
+}
+.noteName {
+    display: inline-block;
+    margin-left: 20px;
+    text-overflow: clip;
+    white-space: normal;
+    
 }
 .panel {
     position: absolute;
@@ -24,10 +58,23 @@
 }
 .header {
     position: relative;
+    margin-bottom: 40px;
+}
+.header h1 {
+    margin-left: 30%;
+}
+.header h1 > span {
+    font-weight: bold;
 }
 .logout {
     width: 50px;
 }
 .delete {
     width: 50px;
+}
+.add span {
+    color: rgb(36, 167, 36);
+}
+.delete span {
+    color: rgb(172, 59, 59);
 }

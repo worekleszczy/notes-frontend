@@ -1,4 +1,9 @@
-.app-container {
-    border: #000 2px solid;
-    padding: 10px;
+
+h3 {
+    height: 40px;
+    width: 100%;
+    background-image: url("https://www.uen.org/summit/2015/images/green-bar.png");
+    margin: 40px;
+    margin: 0px;
+    padding: 0px;
 }

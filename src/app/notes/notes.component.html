@@ -1,21 +1,24 @@
 <div>
     <div class=header>
-        <h1>Welcome {{user}}</h1>
+        <h1>Welcome <span>{{username}}</span></h1>
         <div class="panel">
-            <div class="add"><button (click)="addNote()">add</button></div>
+            <div class="add"><button (click)="addNote()"><span class="glyphicon glyphicon-plus"></span></button></div>
             <input type="text" [(ngModel)]="newNoteName"/>
-            <div class="delete"><button (click)="deleteNote()">delete</button></div>
-            <div class="logout"><button (click)="logout()">logout</button></div>
+            <div class="delete"><button (click)="deleteNote()"><span class="glyphicon glyphicon-trash"></span></button></div>
+            <div class="logout"><button (click)="logout()"><span class="glyphicon glyphicon-off"></span></button></div>
+
         </div>
     </div>
     <ul class="notes">
         <li *ngFor="let note of notes" 
         (click)="onSelect(note)" 
-        [class.selected]="note===selectedNote"
-        class="note">
-            <div>
-                Name: {{note.name}}
-            </div>
+        class="notewrapper">
+        <div class="note" [class.selected]="note===selectedNote">
+                <div class="nameWrapper">
+                    <span class="noteName">{{note.name}}</span>
+                </div>
+        </div>
+            
         </li>
     </ul>
 </div>

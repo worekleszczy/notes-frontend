@@ -16,12 +16,17 @@ export class NotesComponent implements OnInit {
     notes:Note[];
     selectedNote: Note;
     newNoteName: string;
+    username: string = JSON.parse(localStorage.getItem('currentUser')).username;
 
     onSelect(note: Note): void {
       if(this.selectedNote) {
         this.noteService.updateNote(this.selectedNote).subscribe();
       }
-      this.selectedNote = note;
+      if(this.selectedNote === note) {
+        this.selectedNote = undefined
+      } else {
+        this.selectedNote = note;
+      }
     }
 
     getNotes(): void {
@@ -45,7 +50,7 @@ export class NotesComponent implements OnInit {
 
     deleteNote() {
       this.noteService.deleteNote(this.selectedNote).subscribe(result => {
-        this.noteService = null;
+        this.selectedNote = undefined;
         this.getNotes();
       });
     }

@@ -1,14 +1,18 @@
-<div>
-    <div class="dataWrapper" *ngIf="error">
-        <span class="error">Invalid username or password</span>
+<div class="loginView">
+    <div class="formWrapper">
+        <div class="form">
+            <div class="dataWrapper" *ngIf="error">
+                <span class="error">Invalid username or password</span>
+            </div>
+            <div class="formEntry">
+                <label for="username">Username</label>
+                <input id="username" type="text" [(ngModel)]="username" />
+            </div>
+            <div class="formEntry">
+                    <label for="password">Password</label>
+                    <input id="password" type="password" [(ngModel)]="password" />
+            </div>
+            <button (click)="login()">Login</button>
+      </div>
     </div>
-    <div>
-        <label for="username">Username</label>
-        <input id="username" type="text" [(ngModel)]="username" />
-    </div>
-    <div>
-            <label for="password">Password</label>
-            <input id="password" type="password" [(ngModel)]="password" />
-    </div>
-    <button (click)="login()">Login</button>
 </div>
